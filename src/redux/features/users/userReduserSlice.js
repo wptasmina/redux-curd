@@ -8,14 +8,20 @@ export const userSlice = createSlice({
     reducers: {
         addUser: (state, action)=> {
             state.push(action.payload);
-            console.log(action);
-            
-            
+            console.log(action);   
+        },
+        updateUser: (state, action)=> {
+           const {id, name, email} = action.payload
+           const update = state.find(user => user.id == id)
+            if(update){
+                update.name = name,
+                update.email = email
+            }   
         }
 
     }
 
 })
 
-export const { addUser } = userSlice.actions
+export const { addUser, updateUser } = userSlice.actions
 export const userReducer =  userSlice.reducer
