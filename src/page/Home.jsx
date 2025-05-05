@@ -13,12 +13,14 @@ export default function Home() {
 
 
   return (
-    <div className="">
+    <div>
       <h2 className="text-4xl font-bold text-gray-800">CURE App with json server</h2>
+      <div className="text-left mt-8 mb-4">
       <Link to="/create">
-        <button className="my-8 px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded cursor-pointer">Create+</button>
+        <button className=" px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded cursor-pointer">Create+</button>
       </Link>
 
+      </div>
       <table className="table border border-gray-300 border-separate rounded-t-lg w-full text-left">
         <thead className="bg-gray-100">
           <tr>
