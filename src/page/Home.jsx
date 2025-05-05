@@ -1,10 +1,15 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import { deleteUser } from "../redux/features/users/userReduserSlice"
 
 
 export default function Home() {
   const users = useSelector(state => state.users)
-  console.log(users)
+  const dispatch = useDispatch()
+
+  const handleDelete = (id) => {
+    dispatch(deleteUser({id: id}))
+  }
 
 
   return (
@@ -32,7 +37,7 @@ export default function Home() {
                 <td>{user.email}</td>
                 <td className="space-x-2 flex">
                   <Link to={`/edit/${user.id}`} className="text-white bg-blue-700 px-4 py-1 rounded">Edit</Link>
-                  <Link to={``} className="text-white bg-red-500 px-4 py-1 rounded">Delete</Link>
+                  <button onClick={() => handleDelete(user.id)} className="text-white cursor-pointer bg-red-500 px-4 py-1 rounded">Delete</button>
                 </td>
 
               </tr>
