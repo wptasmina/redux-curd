@@ -1,10 +1,11 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
 
 export default function Home() {
   const users = useSelector(state => state.users)
   console.log(users)
+
 
   return (
     <div className="">
